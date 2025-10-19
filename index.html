@@ -3,33 +3,275 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon</title>
+  <meta name="color-scheme" content="light" />
+  <title>TESPEC — ICCV 2025</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    body {
+    /* === Global White Background === */
+    html, body {
       margin: 0;
-      height: 100vh;
-      background: #0f172a;
-      color: #f8fafc;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      padding: 0;
+      background-color: #ffffff !important; /* absolute white */
+      color: #111;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    main.content {
+      background-color: #ffffff;
+      width: 100%;
+      max-width: 1100px;
+      padding: 40px 24px;
+      margin: 0 auto;
+    }
+
+    section {
+      background-color: #ffffff;
+    }
+
+    .section {
+      margin-bottom: 80px;
+    }
+
+    .title {
+      font-size: 2rem;
       text-align: center;
+      margin-bottom: 12px;
+      color: #111;
     }
-    h1 {
-      font-size: 3rem;
-      margin: 0;
+
+    .authors, .affiliations {
+      text-align: center;
+      margin-bottom: 4px;
     }
-    p {
-      font-size: 1.2rem;
-      color: #94a3b8;
-      margin-top: 1rem;
+
+    /* === Resource Buttons === */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      color: #000000; /* black text for high contrast */
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .link-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+
+    /* === Vivid Button Colors === */
+    .link-arxiv { background-color: #ff4d4d; }       /* vivid red */
+    .link-code { background-color: #4da3ff; }        /* vivid sky blue */
+    .link-poster { background-color: #7d5fff; }      /* vivid purple */
+    .link-twitter { background-color: #40c4ff; }     /* bright cyan */
+    .link-linkedin { background-color: #33a1de; }    /* vivid LinkedIn blue */
+
+    /* === Results Grid === */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .result-card {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+      padding: 16px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .result-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .result-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    /* === Figure Container === */
+    .figure {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background-color: #f5f5f5; /* subtle neutral background for contrast */
+      border-radius: 8px;
+      flex-direction: column;
+    }
+
+    .figure img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #444;
     }
   </style>
 </head>
+
 <body>
-  <h1>🚧 Coming Soon</h1>
-  <p>The Codebases and checkpoints will be released.</p>
+  <main class="content">
+    <section id="title" class="section hero" aria-labelledby="paper-title">
+      <h1 id="paper-title" class="title gradient-text">
+        TESPEC: Temporally Enhanced Self-Supervised Pretraining for Event Cameras
+      </h1>
+      <div class="authors">
+        <a href="https://mhdmohammadi.github.io" target="_blank" rel="noopener">Mohammad Mohammadi</a><sup>1,2</sup>,
+        <a href="https://wuziyi616.github.io" target="_blank" rel="noopener">Ziyi Wu</a><sup>1,2</sup>,
+        <a href="https://www.gilitschenski.org/igor/" target="_blank" rel="noopener">Igor Gilitschenski</a><sup>1,2</sup>
+      </div>
+      <div class="affiliations">
+        <span><sup>1</sup> University of Toronto</span>
+        <span><sup>2</sup> Vector Institute</span>
+      </div>
+      <div class="meta">
+        <span class="pill">Accepted at ICCV 2025</span>
+      </div>
+
+      <div class="links" aria-label="Resource links">
+        <a class="link-btn link-arxiv" href="https://arxiv.org/abs/2508.00913" target="_blank" rel="noopener">ArXiv</a>
+        <a class="link-btn link-code" href="#" target="_blank" rel="noopener">Code</a>
+        <a class="link-btn link-poster" href="#" target="_blank" rel="noopener">Poster</a>
+        <a class="link-btn link-twitter" href="#" target="_blank" rel="noopener">Twitter</a>
+        <a class="link-btn link-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <section id="overview" class="section section-block" aria-labelledby="overview-title">
+      <h2 id="overview-title" class="section-title">Overview</h2>
+      <p class="section-desc">
+        In this work, we introduce <strong>TESPEC</strong>, a sequential pre-training paradigm with a novel target specifically designed for <strong>event cameras</strong>. 
+        Sequence models, such as <strong>recurrent architectures</strong>, are naturally better suited for processing event data since they can model entire streams, 
+        whereas feed-forward models are limited to short event intervals. However, training recurrent models requires <em>large-scale labeled event streams</em>, 
+        which are often unavailable. 
+      </p>
+      <p class="section-desc">
+        To address this challenge, we propose a <strong>self-supervised pre-training framework</strong> that enables the model to learn both <strong>temporal</strong> and 
+        <strong>spatial representations</strong>. In <strong>TESPEC</strong>, the recurrent backbone processes <em>masked event streams</em> and reconstructs a 
+        <strong>specially designed target</strong> that resembles <em>grayscale images</em> while encoding <strong>temporal information</strong>. 
+      </p>
+      <p class="section-desc">
+        We evaluate <strong>TESPEC</strong> by fine-tuning the pre-trained backbone on three core perception tasks :
+        <strong>Object Detection</strong>, <strong>Semantic Segmentation</strong>, and <strong>Depth Estimation</strong>, across five real-world datasets. 
+        Our approach achieves <strong>state-of-the-art performance</strong> on all benchmarks. 
+        The full <strong>codebase</strong> and <strong>checkpoints</strong> are publicly available; please refer to our <strong>GitHub repository</strong> and 
+        <strong>paper</strong> for further details.
+      </p>
+      <div class="overview-grid">
+        <figure>
+          <img class="media" src="./animation.mp4" alt="TESPEC pipeline overview animation" />
+        </figure>
+      </div>
+    </section>
+    
+
+    <section id="results" class="section section-block" aria-labelledby="results-title">
+      <h2 id="results-title" class="section-title">Results</h2>
+      <div class="results-grid">
+        <div class="result-card">
+          <h3>Object Detection Results</h3>
+          <div class="figure"><img src="object_detection.jpg" alt="Object detection results"></div>
+        </div>
+
+        <div class="result-card">
+          <h3>Semantic Segmentation Results</h3>
+          <div class="figure"><img src="semantic_segmentation.jpg" alt="Semantic segmentation results"></div>
+        </div>
+
+        <div class="result-card">
+          <h3>Depth Estimation Results</h3>
+          <div class="figure"><img src="depth_estimation.jpg" alt="Depth estimation results"></div>
+        </div>
+
+        <div class="result-card">
+          <h3>Inference Runtime</h3>
+          <div class="figure"><img src="inference_runtime.jpg" alt="Inference runtime results"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="citation" class="section section-block" aria-labelledby="citation-title">
+      <h2 id="citation-title" class="section-title">Citation</h2>
+      <p class="section-desc">
+        If you find our work useful in your research or projects, please consider citing:
+      </p>
+    
+      <pre class="citation-block"><code>@article{mohammadi2025tespec,
+      title={TESPEC: Temporally-Enhanced Self-Supervised Pretraining for Event Cameras},
+      author={Mohammadi, Mohammad and Wu, Ziyi and Gilitschenski, Igor},
+      journal={arXiv preprint arXiv:2508.00913},
+      year={2025}
+    }</code></pre>
+    
+      <footer>
+        <p>Feel free to reach out for collaborations or discussions.</p>
+      </footer>
+    
+      <style>
+        .citation-block {
+          background: #f8f8f8;
+          color: #222;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          padding: 22px 28px;
+          font-family: "Courier New", monospace;
+          font-size: 0.95rem;
+          line-height: 1.6;
+          max-width: 900px; /* wider width */
+          margin: 24px auto;
+          white-space: pre-wrap;
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        }
+    
+        .citation-block code {
+          color: #002b5c; /* UofT navy blue */
+        }
+    
+        #citation footer {
+          text-align: center;
+          margin-top: 20px;
+          font-size: 0.9rem;
+          color: #444;
+        }
+      </style>
+    </section>
+    
+    
+  </main>
 </body>
 </html>
